@@ -1,0 +1,20 @@
+#main{
+    display: flex;
+}
+
+th{
+    color: red;
+    border: 1px solid black;
+}
+
+td{
+    padding-right: 30px;
+}
+
+table{
+    padding: 15px 50px 0 50px;
+}
+
+.td_button{
+    padding-left: 20px;
+}

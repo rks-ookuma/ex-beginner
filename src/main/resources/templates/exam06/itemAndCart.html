@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../static/exam06.css" th:href="@{/exam06.css}">
+</head>
+<body>
+        <span id="main">
+            <table>
+                <tr>
+                    <th colspan="3">商品一覧</th>
+                </tr>
+                <tr th:each=" itemInSale : ${application.itemInSaleMap}">
+                    <form action="itemAndCart.html" th:action="@{/shop/inCart}" method="POST">
+                        <input type="hidden" name="inItemIndex" th:value="${itemInSale.key}">
+                        <td th:text="${itemInSale.value.name}">手帳ノート</td>
+                        <td th:text="${#numbers.formatInteger(itemInSale.value.price,1,'COMMA')}+'円'">1,000円</td>
+                        <td class="td_button"><button>カートへ</button></td>
+                    </form>
+                </tr>
+            </table>
+            
+            <table>
+                <tr>
+                    <th colspan="3">カート一覧</th>
+                </tr>
+                <tr th:each=" itemInCart,status : ${session.itemInCartList}">
+                    <form action="itemAndCart.html" th:action="@{/shop/delete}" method="POST">
+                    <input type="hidden" name="deleteItemIndex" th:value="${status.index}">
+                    <td th:text="${itemInCart.name}">手帳ノート</td>
+                    <td th:text="${#numbers.formatInteger(itemInCart.price,1,'COMMA')}+'円'">1,000円</td>
+                    <td class="td_button"><button>削除</button></td>
+                    </form> 
+                </tr>
+                <tr>
+                    <th colspan="3">合計</th>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td th:text="${totalPrice}+'円'">3,500円</td>
+                    <td></td>
+                </tr>
+            </table>
+        </span>
+
+</body>
+</html>
