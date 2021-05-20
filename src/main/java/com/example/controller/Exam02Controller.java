@@ -4,7 +4,6 @@ import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -20,7 +19,7 @@ public class Exam02Controller {
 	}
 
 	@RequestMapping("/receive")
-	public String receive(String num1, String num2, Model model) {
+	public String receive(String num1, String num2) {
 		session.setAttribute("num1", num1);
 		session.setAttribute("num2", num2);
 		int result = Integer.parseInt(num1) + Integer.parseInt(num2);
