@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="exam03/exam03Result.html" th:action="@{/exam03/calcPrice}" method="POST">
+        <label for="price1Field">商品１：<input type="number" name="price1" id="price1Field"></label><br>
+        <label for="price2Field">商品２：<input type="number" name="price2" id="price2Field"></label><br>
+        <label for="price3Field">商品３：<input type="number" name="price3" id="price3Field"></label><br>
+        <button>購入</button>
+    </form>
+</body> 
+</html>

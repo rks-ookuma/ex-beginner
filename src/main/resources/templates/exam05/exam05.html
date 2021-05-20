@@ -6,9 +6,10 @@
 </head>
 <body>
 
-    <form action="exam05Result.html" th:action="@{/exam05/searchName}" th:object="${nameForm}">
-    <div><label for="nameField">名前：<input type="text" name="name" id="nameField" th:field="*{name}"></label></div>
-    <button>検索</button>
+    <form action="exam05Result.html" th:action="@{/exam05/searchName}" th:object="${nameForm}" method="post">
+        <div th:errors="*{name}" style="color: red;">エラー！</div>
+        <div><label for="nameField">名前：<input type="text" name="name" id="nameField" th:field="*{name}"></label></div>
+        <button>検索</button>
     </form>
 </body>
 </html>
