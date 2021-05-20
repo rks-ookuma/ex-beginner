@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <p>名前：<span th:text="${user.name}">山田太郎</span></p>
+    <p>年齢：<span th:text="${user.age}">33</span></p>
+    コメント：<br>
+    <pre th:text="${user.comment}">よろしくおねがいします。</pre>
+</body>
+</html>
