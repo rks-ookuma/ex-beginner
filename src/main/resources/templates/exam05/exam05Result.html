@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>検索結果</h1>
+    <div th:each=" member : ${memberList}">
+        <span th:text="${member.name}">イチロー</span>
+    </div>
+    
+</body>
+</html>

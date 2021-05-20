@@ -26,10 +26,11 @@ public class Exam04Controller {
 	}
 
 	@RequestMapping("/receiveUserInfo")
-	public String receiveUserInfo(@Validated UserForm userForm, BindingResult result, User user, Model model) {
+	public String receiveUserInfo(@Validated UserForm userForm, BindingResult result, Model model) {
 		if (result.hasErrors()) {
 			return "exam04/exam04";
 		}
+		User user = new User();
 		BeanUtils.copyProperties(userForm, user);
 		model.addAttribute("user", user);
 

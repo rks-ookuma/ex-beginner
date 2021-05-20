@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+
+    <form action="exam05Result.html" th:action="@{/exam05/searchName}" th:object="${nameForm}">
+    <div><label for="nameField">名前：<input type="text" name="name" id="nameField" th:field="*{name}"></label></div>
+    <button>検索</button>
+    </form>
+</body>
+</html>
